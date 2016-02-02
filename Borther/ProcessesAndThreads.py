@@ -108,7 +108,7 @@ t2 = threading.Thread(target=process_thread, args=('han', 'xiu'), name='thread-B
 t1.start()
 t2.start()
 
-t1.join()
+t1.join()     #  上面说是为了同步进程 不知道 这个是不是会影响执行顺序
 t2.join()
 
 
