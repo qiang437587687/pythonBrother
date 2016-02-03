@@ -86,6 +86,7 @@ run_thread(101)
 # 这个threading.local()怎么理解呢...就是定义一个相对于某一个线程的一个全局变量, 达到线程和线
 # 程之间使用的是各自独立的变量.
 
+
 location_school = threading.local()
 
 def progress_student():
@@ -108,7 +109,7 @@ t2 = threading.Thread(target=process_thread, args=('han', 'xiu'), name='thread-B
 t1.start()
 t2.start()
 
-t1.join()     #  上面说是为了同步进程 不知道 这个是不是会影响执行顺序测试 测试..
+t1.join()     # 上面说是为了同步进程 不知道 这个是不是会影响执行顺序测试
 t2.join()
 
 
