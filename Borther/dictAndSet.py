@@ -7,6 +7,25 @@ d.pop('xianqiang')
 print('输出结果是%s'%d)
 print(d["zhang"])
 
+
+    # 2.6 添加一下 dict 的创建方法
+
+d1 = dict()
+d1['a'] = 1
+print('创建方式1(d1 = dict()):', d1['a'])
+
+d2 = dict(a=1, b=2)
+print('创建方式2(dict(a=1, b=2)):', d2['a'], d2['b'])
+
+d3 = dict((('a', 1), ('b', 2)))
+print('创建方式3dict = 元组的方式', d3['a'])
+
+d4 = dict([('a', 1), ('b', 2)])
+print('和上面一个创建方式不过用了[]', d4['a'])
+
+
+    #######
+
 # set
 s = set([1, 2, 3])
 print(s)
