@@ -136,9 +136,8 @@ from collections import Counter
 c = Counter()
 for ch in 'Programming':
     c[ch] = c[ch] + 1
+
 print(c)  # Counter({'r': 2, 'g': 2, 'm': 2, 'n': 1, 'i': 1, 'a': 1, 'P': 1, 'o': 1})
-
-
 
 
 
