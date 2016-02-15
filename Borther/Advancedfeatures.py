@@ -6,13 +6,16 @@ print("开始学习高级特性")
 
 # 切片
 
-# 切片来说注意这个的结果可不是 1 的位置开始 长度是2 这个和iOS是有点不一样
+# 切片来说注意这个的结果可不是 1 的位置开始 长度是2 而是 开始位置到结束位置.这个和iOS是有点不一样
 L = ['M', 'S', 'Z', 'H', 'X']
 
-print('Slice结果:', L[0:2])
+print('Slice结果:', L[3:4])
 print('Slice结果:', L[:2])
 
-# 倒数开始的元素索引是 -1
+# 倒数开始的元素索引是 -1  # 倒数的位置
+
+print('倒数的slice的结果是:', L[-1]) # 注意这里面如果是范围那么里面的分割符号应该是 :
+
 print('Slice结果:', L[-2:-1])
 print('Slice结果:', L[-2:])
 
@@ -32,6 +35,8 @@ print(ruple1[1:2])
 # 字符串也是能用这个方法来做的
 str2 = 'ABCDEF'
 print(str2[1:4])
+print('倒数的一个str2', str2[-2: -1]) # 这个就表示 是一个-2 开始 -1结束的区域不包含后面的数字区域.
+#  2.15 简单的 总结一下切片操作   就是对于一个 list(包含tuple, str)的操作 形式就是 [:] 可以写上负数代表从后往前
 
 
 # 迭代
@@ -64,7 +69,7 @@ print(list1)
 
 # 方法2
 L = []
-for x in range(1,11):
+for x in range(1, 11):
     L.append(x*x)
 print(L)
 
@@ -87,9 +92,20 @@ L1 = ['Hello', 'World', 18, 'Apple', None]
 print([s.lower() for s in L1 if isinstance(s, str)])
 
 
+# 2.15 简单写一下列表生成器
+
+print('列表1 直接转换为list的方式', list(range(1, 11)))
+print('列表2 for循环的形式')
+list22 = []
+for x in range(1, 11):
+    list22.append(x*x)
+print('list22 = ', list22)
+
+print('列表3 类似匿名函数的形式 其实可以借鉴列表2的方法')
+list33 = [x for x in range(1, 11) if x > 5]
+print(list33)
 
 # 生成器 generator
-
 
 L3 = [x * x for x in range(10)]
 # 这个就是一个生成器了 前面是一个list 这个是一个 generator 可以通过next() 函数来打印 G3里面的数据
@@ -142,6 +158,46 @@ for n in fib(6):
     print(n)
 
 
+# 2.15 看一下
+
+listo = [x*x for x in range(1, 18) if x > 10]
+print('方式1 这样的一个listo 就是一个生成器, 用到哪里就生成到哪里 因为是print 所以会全部有用的元素都会用到', listo)
+
+print('方式2 就是一个函数含有一个yield的函数就是一个生成器')
+def listOdd():
+    print('step111')
+    yield 1
+    print('step222')
+    yield 2
+    print('step333')
+    yield 5
+oo1 = listOdd()
+oo2 = listOdd()
+print(next(oo1))  # 这两个的结果是一样的 说明他们是不同的对象
+print(next(oo2))
+
+print(next(oo1))
+print(next(oo2)) # 记住 yield 就是返回值 下一个yield 是下一次的返回值
+
+# 下面的这个是想输出一个数列 一个 n!
+
+def nDown(max):
+    n = 1
+    # b = 0
+    while n < max:
+
+        yield n
+        n += 1
+    return 'down ok'
+
+# 这是一个生成器  还没有循环的机制呢
+
+def giveMeDown(max):
+    for x in nDown(max):
+        print(x)
+
+print('nDown(100) => ', giveMeDown(10))
+print('成功了O(∩_∩)O哈哈~')
 
 # 开始一个小练习  杨辉三角  ----> 不会做 囧~
 
@@ -163,6 +219,7 @@ for n in fib(6):
 #
 # for n in z:
 #     print(n)
+
 
 from collections import Iterable
 # 迭代器 可以调用 next() 函数并且不断返回 最后抛出 StopIteration 的称之为迭代器

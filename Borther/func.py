@@ -115,7 +115,7 @@ def powerrr(x, n=2):
 # tip1
 
 
-def add_end(L=[]):
+def add_end(L = []):
     L.append('End')
     return L
 print(add_end())
@@ -146,13 +146,16 @@ print(add_end_tip1())
 print(add_end_tip1())
 
 
-# 声明可变参数的方法,可变参数其实内部接受到的是一个tuple
-
+# 声明可变参数的方法,可变参数其实内部接收到的是一个tuple
 
 def calc(*number):
+
     summ = 0
-    for n in number:
+
+    for n in number: # 因为接收到的书一个tuple 所以才能这么干.
+
         summ = summ + n*n
+
     return summ
 
 print(calc(1, 2, 3, 4, 4, 6))
@@ -160,7 +163,7 @@ print(calc(1, 2, 3))
 print(calc())
 
 
-# 如果已经有了一个list 或者是tuple那么嗲用一个可变参数的函数时候可以在前面加上
+# 如果已经有了一个list 或者是tuple那么掉用一个可变参数的函数时候可以在前面加上
 # *来表示让这个list 或者是 tuple 里面的元素都变成可变的传入到可变参数里面.
 
 numbers = (1, 2, 2)
@@ -232,5 +235,5 @@ f2(*argss, **kww)
 
 # 这样看来其实任意的函数都是能通过 func(*args, **kw)的方式进行调用.
 # f2(*args, **kw) 刚才这个错了出的错误信息是 takes from 2 to 3 positional arguments but 4 positional arguments
-# 这个问题也挺简单 就是说 这个地方的第四个参数已经是一个命名关键字参数了,而这里面有4个参数只有所以不合法了
+# 这个问题也挺简单 就是说 这个地方的第四个参数已经是一个命名关键字参数了,而这里面有4个参数 所以不合法了
 

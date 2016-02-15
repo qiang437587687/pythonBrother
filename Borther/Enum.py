@@ -20,7 +20,7 @@ for name, member in Month.__members__.items():
 #
 
 
-@unique  # 这个是帮助我们检查是不是有重复值的(保证没有重复值)
+@unique  # 这个是帮助我们检查是不是有重复值的(保证没有重复值) #例如下面的这个sat 重复 了就会报错Attempted to reuse key: 'Sat'
 class Weekday(Enum):
     Sun = 0
     Mon = 1
@@ -29,6 +29,10 @@ class Weekday(Enum):
     Thu = 4
     Fri = 5
     Sat = 6
+    # Sat = 7
+
+
+print('Weekday.sat', Weekday.Sat, Weekday.Sat.value)
 
 day1 = Weekday.Mon
 print(day1)
@@ -76,7 +80,6 @@ print(type(hh))
 #  metaclass
 #  定义习惯 metaclass 的类名总是以Metaclass的形式结尾以便表示这就是一个metaclass
 #  metaclass 是类的模板 所以必须冲type类型派生
-
 
 class ListMetaclass(type):
 

@@ -4,7 +4,8 @@
 # 尝试一下引入另外一个model里面的函数
 
 from func import my_abs
-print(my_abs(-2))
+print('引用了上面的func 就把里面所有的打印都在这个module里面打印出来了这个真的合理吗?')
+print('my_abs(-2)', my_abs(-2))
 
 names = ['zhang', 'han']
 for name in names:
@@ -18,5 +19,6 @@ for x in range(101):
     sumnumber = sumnumber + x
 print(sumnumber)
 
+# 2.15 这个看完了~
 
 

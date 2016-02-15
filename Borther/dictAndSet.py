@@ -4,7 +4,7 @@
 # dict的key必须是不可变对象。
 d = {'michael': 76, 'zhang': 35, "xianqiang": 89}
 d.pop('xianqiang')
-print('输出结果是%s'%d)
+print('输出结果是%s' % d)
 print(d["zhang"])
 
 
@@ -36,7 +36,7 @@ s.add(4)
 print(s)
 
 a = ['c', 'v', 'a']
-a.sort()
+a.sort(key=None) # 这里面的key 还需要再查询一下.
 print(a)
 
 # b 是一个变量 而 agc 是一个常量 因此b是有对应的一个replace方法的
