@@ -11,12 +11,12 @@ import re
 print('Second Spider')
 
 
-if __name__ == '__main__':
-
-    classinfo = []
-    url = 'http://www.jikexueyuan.com/course/?pageNum=1'
-    jikespider = spider()
-    all_links = jikespider.changepage()
+# if __name__ == '__main__':
+#
+#     classinfo = []
+#     url = 'http://www.jikexueyuan.com/course/?pageNum=1'
+#     jikespider = spider()
+#     all_links = jikespider.changepage()
 
 
 

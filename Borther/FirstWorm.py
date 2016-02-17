@@ -4,8 +4,8 @@
 import re
 import requests
 import logging
-
 logging.basicConfig(level=logging.INFO)
+
 
 html = requests.get('http://www.qiushibaike.com')
 print('html.url ===> ', html.url)
@@ -14,7 +14,6 @@ print('html encoding ===>', html.encoding)  # 注意不同的编码之间可能�
 # print(html.text)  # requests 直接get一个html
 
 tr = r'<div class="content">(.*?)<!'
-# tr = r'title'
 
 # A = ASCII = sre_compile.SRE_FLAG_ASCII # assume ascii "locale"
 # I = IGNORECASE = sre_compile.SRE_FLAG_IGNORECASE # ignore case
@@ -38,10 +37,10 @@ print(len(chinese))
 for each in chinese:
     print(each)
 
-# 现在取出来了 保存到一个txt文件里面
+# 现在取出来了 保存到一个txt文件里面  这个里面如果是用 'w'那么就是每次都覆盖的  如果是'a' 那么每次都是追加的~
 fw = open('/Users/zhangxianqiang/Desktop/pythonBrother/Borther/FirstWorm.txt', 'w')
 for each in chinese:
-    print(each)
+    # print(each)
     fw.write(each)
 fw.close()
 
