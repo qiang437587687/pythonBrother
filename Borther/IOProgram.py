@@ -3,6 +3,10 @@
 
                             ################文件相关的操作#####################
 
+
+# f2 = open('/Users/zhangxianqiang/Desktop/python创建文件夹/test2.txt', 'a')  'a' 代表追加文件!!!
+
+
 #  读文件  open() 函数 - read()
 
 f = open('/Users/zhangxianqiang/Desktop/python创建文件夹/test.txt')
@@ -49,7 +53,7 @@ with open('/Users/zhangxianqiang/Desktop/python创建文件夹/test2.txt', 'r', 
 
 fw = open('/Users/zhangxianqiang/Desktop/python创建文件夹/test.txt', 'w')
 fw.write('hello world')
-f.close()
+fw.close()
 
 # 可以使用 上面的命令一直写文件, 不要忘记 close()因为要是忘记这个了 可能没有真正的写到文件里面而是缓存在内存中
 # 所以还是用with命令来的好一点
