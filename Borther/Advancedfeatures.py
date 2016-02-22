@@ -245,5 +245,7 @@ while True:
 
 
 
+s = '%d000%s' % (100.111, 'zhang')
+print(s)
 
 
