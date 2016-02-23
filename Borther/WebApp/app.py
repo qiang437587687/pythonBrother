@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+#  control +  space 是自动补全啊. 哈哈~终于找到.
+
 import logging
 logging.basicConfig(level=logging.INFO)
 #

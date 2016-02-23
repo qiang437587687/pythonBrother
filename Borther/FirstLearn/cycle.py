@@ -3,7 +3,7 @@
 
 # 尝试一下引入另外一个model里面的函数
 
-from func import my_abs
+from FirstLearn.func import my_abs
 print('引用了上面的func 就把里面所有的打印都在这个module里面打印出来了这个真的合理吗?')
 print('my_abs(-2)', my_abs(-2))
 

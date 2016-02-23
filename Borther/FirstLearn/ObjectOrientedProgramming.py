@@ -228,6 +228,19 @@ print(callable([1, 2, 3])) #False
 
 
 
+class AAA(object):
+    name = 'AAA'
+
+A = AAA()
+print(A.name)
+
+A.name = 'BBB'
+print(A.name)
+
+del A.name
+
+print(A.name)
+
 
 
 

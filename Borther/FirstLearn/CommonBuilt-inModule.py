@@ -20,7 +20,6 @@ print(type(dtt))
 print(dtt.timestamp())   # 打印出时间戳 如果有小数 那么小数表示的是毫秒数, 别的语言可能是整数表示
                          # 所以遇到时候对应的除以1000 就对应上了.
 
-
 tt = 1429417200.0
 print(datetime.fromtimestamp(tt))  # 反向的转换
 print(datetime.utcfromtimestamp(tt))  # 标准转换 (上面的转换是根据系统做出的东八区时间)
