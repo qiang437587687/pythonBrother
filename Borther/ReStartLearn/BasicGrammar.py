@@ -1,7 +1,7 @@
 
 
 
-print('重新学习一下基础语法')
+print('重新学习一下基础语法 这里面是实现的一个栈')
 
 for i in range(0, 100):
     print('item %d' % i)
@@ -56,3 +56,4 @@ q.Push('hello')
 q.Empty()
 
 print(q.Out())
+
