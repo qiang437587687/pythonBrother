@@ -142,6 +142,7 @@ print(ficr)
 import json
 dj = dict(name='han', age='18')
 print(json.dumps(dj))  # {"age": "18", "name": "han"}
+print('type 是 %s' % type(json.dumps(dj)))  # 哈哈果然是str.
 
 json_str = '{"age": "18", "name": "hanxiujuan"}'
 print(json.loads(json_str))

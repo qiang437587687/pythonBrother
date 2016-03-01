@@ -57,3 +57,41 @@ q.Empty()
 
 print(q.Out())
 
+
+
+# 检测一个 list 的使用
+
+list31 = ['zhang', 'xian', 'qiang', 'han', 'xiu', 'juan']
+
+list312 = []
+
+for str in list31:
+    print(list31.index(str))
+    list31[list31.index(str)] = 'dabao'
+    print(list31)
+    list312.append(str)
+'''
+1.index 可以取到对应的元素在数组中的位置
+2.后面的参数 第一个是 规定起始的位置 第二个是规定结束的位置
+'''
+print(list31)
+print(list312)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

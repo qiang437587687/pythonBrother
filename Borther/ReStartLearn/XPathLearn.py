@@ -5,7 +5,7 @@
 """
 tip : 1. //      定位根节点
 tip : 2. /       往下层寻找
-tip : 3. /text() 提取文本内容
+tip : 3. /text() 提取文本内容  其实就是把其中的内容转换为 str
 tip : 4. /@xxx   提取属性内容
 """
 
@@ -32,17 +32,30 @@ content = selector.xpath('//*[@id="content-left"]/div')
 
 print(type(content))
 print(len(content))
-print(content)
+# print(content)
 print('------')
 
 for each in content:
 
     cc = each.xpath('div[@class="content"]/text()')  # 在查找出来的那些 div 依次寻找content  # 这里面解析出来的内容 遇到节点(<br>等)分离其中的元素了
-    print(cc)
+    # print('out cc %s' % cc)
     if len(cc) >= 1:
         # cc.replace('\n', '')
         # cc.replace('\n', 'python')
-        print('\n'.join(cc))
+
+        dd = []
+
+        for str in cc:
+            # print('str first %s ' % str)
+            # print(len(str))
+            str = str.strip('\n')
+            dd.append(str)
+            # print('str after %s ' % str)
+            # print(len(str))
+
+        # print('in cc %s' % cc)
+
+        print('\n'.join(dd))
 
         # print(json.loads(cc[0]))
         # print(json.loads(cc[0].replace('<br>', '')))
