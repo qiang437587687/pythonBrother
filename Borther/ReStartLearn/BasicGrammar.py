@@ -67,6 +67,7 @@ list312 = []
 
 for str in list31:
     print(list31.index(str))
+    # list31[1] = 'dabao'
     list31[list31.index(str)] = 'dabao'
     print(list31)
     list312.append(str)
