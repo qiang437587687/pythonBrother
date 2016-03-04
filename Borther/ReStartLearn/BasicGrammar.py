@@ -1,5 +1,5 @@
 
-
+import re
 
 print('重新学习一下基础语法 这里面是实现的一个栈')
 
@@ -80,7 +80,12 @@ print(list312)
 
 
 
+sssss = '1234567890123'
 
+print(re.split(r'[27]', sssss))
+
+print(sssss.split('2'))
+# print(sssss.split('2 or 3'))
 
 
 
