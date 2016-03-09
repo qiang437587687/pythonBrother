@@ -26,7 +26,7 @@ for i in range(1, 20 + 1):
 # 打开或者是创建文件
 
 file = open('/Users/zhangxianqiang/Desktop/pythonBrother/Borther/ReStartLearn/5173.txt', 'w')
-file.truncate() # 清空文件(每一次请求上一次就没用了那么就清空)
+file.truncate()  # 清空文件(每一次请求上一次就没用了那么就清空)
 # fw.close()
 # file = open('/Users/zhangxianqiang/Desktop/pythonBrother/Borther/ReStartLearn/5173.txt', 'a')
 
