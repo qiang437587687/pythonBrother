@@ -7,10 +7,10 @@
 
 '''
 
-import urllib
-from urllib import request
-import os
-import threading
+# import urllib
+# from urllib import request
+# import os
+# import threading
 
 # body = urllib.request.urlopen('http://www.baidu.com')
 # urllib.request.urlopen('http://www.baidu.com')
@@ -25,22 +25,25 @@ import threading
 
 # os.chdir(directory)
 
+
+print('韩大宝')
+
 from scapy.all import *
 
 def packet_callback(packet):
     print(packet.show())
 
-sniff(prn=packet_callback, count=10)
+sniff(prn=packet_callback, count=1)
 
 
-def mailpacket_callback(packet):
-    if packet['TCP'].payload:
-        mail_packet = str(packet['TCP'].payload)
-        if 'user' in mail_packet.lower() or 'pass' in mail_packet.lower():
-            print('[*] Server: %s' % packet['IP'].dst)
-            print('[*] %s' % packet['TCP'].payload)
-
-sniff(filter=)
+# def mailpacket_callback(packet):
+#     if packet['TCP'].payload:
+#         mail_packet = str(packet['TCP'].payload)
+#         if 'user' in mail_packet.lower() or 'pass' in mail_packet.lower():
+#             print('[*] Server: %s' % packet['IP'].dst)
+#             print('[*] %s' % packet['TCP'].payload)
+#
+# sniff(filter='tcp port 110 or tcp port 24 or tcp port 143', prn=mailpacket_callback, store=0)
 
 
 

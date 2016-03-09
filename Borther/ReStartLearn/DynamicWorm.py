@@ -70,7 +70,9 @@ def regetRealCommentUrl(commentNumberId, commentId):
 
 
 # 待获取目标
-sourceUrl = 'http://v.qq.com/cover/e/e4uer5m850721h8.html?vid=j0164r2thel'
+# sourceUrl = 'http://v.qq.com/cover/e/e4uer5m850721h8.html?vid==j0164r2thel'
+sourceUrl = 'http://v.qq.com/cover/e/e7hi6lep1yc51ca.html?vid=h0018p9ihom'
+
 
 vid = getVid(sourceUrl)
 
