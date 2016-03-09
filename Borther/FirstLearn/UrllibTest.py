@@ -4,7 +4,7 @@
 from urllib import request
 
 # Get
-with request.urlopen('https://api.douban.com/v2/book/2129650') as  f:
+with request.urlopen('https://api.douban.com/v2/book/2129650') as f:
     data = f.read()
     print('Status:', f.status, f.reason)
     for k, v in f.getheaders():
