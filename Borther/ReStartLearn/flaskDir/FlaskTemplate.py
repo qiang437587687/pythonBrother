@@ -5,7 +5,7 @@
 
 from flask import Flask, render_template
 
-from Models import User
+from ReStartLearn.flaskDir.Models import User  # 这里面一直提示是有error的.
 
 app = Flask(__name__)
 
