@@ -12,8 +12,8 @@ print('想要抓取动态的数据 (js加载的数据)')
 
 def getComment(realurl):
     # 上面这个是获取数据后解析的过程
-    head = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; WOW64)' \
-                          ' AppleWebKit/537.36 (KHTML, like Gecko) ' \
+    head = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; WOW64)'\
+                          ' AppleWebKit/537.36 (KHTML, like Gecko) '\
                           'Chrome/43.0.2357.130 Safari/537.36'}
     # strurl = 'http://coral.qq.com/article/1165021596/comment?commentid=0&reqnum=50'
     jscontent = requests.get(realurl, headers=head).content.decode()  # content 后面加上这个decode()才行要不显示的是 byte 解析不出来

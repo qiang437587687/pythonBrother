@@ -68,18 +68,18 @@ list31 = ['zhang', 'xian', 'qiang', 'han', 'xiu', 'juan']
 list312 = []
 
 for str in list31:
-    print(list31.index(str))
-    # list31[1] = 'dabao'
+
     list31[list31.index(str)] = 'dabao'
-    print(list31)
-    list312.append(str)
+    str = 'zhangxianqiang'  # 这个地方是一个失误.. 本来就不会变化的~  ╮(╯▽╰)╭ 只不过是换了一个指针的指向而已
+    # list31[1] = 'dabao'
+    # print(list31)
+    # list312.append(str)
 '''
 1.index 可以取到对应的元素在数组中的位置
 2.后面的参数 第一个是 规定起始的位置 第二个是规定结束的位置
 '''
-print(list31)
+print('-----list31 ', list31)
 print(list312)
-
 
 
 sssss = '1234567890123'
@@ -90,7 +90,17 @@ print(sssss.split('2'))
 # print(sssss.split('2 or 3'))
 
 
+kkkkkkk = '1[234[]56(7)890]123'
 
+print(re.split(r'\[]', kkkkkkk))
+
+
+list311 = [1, 2, 3]
+list3112 = [2, 4, list311]
+
+list311[2] = 'zhang'
+print(list311)
+print(list3112)   # 这个证明了 也是随之改变的啊
 
 
 
