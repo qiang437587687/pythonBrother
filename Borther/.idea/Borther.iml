@@ -10,6 +10,7 @@
     <option name="TEMPLATE_FOLDERS">
       <list>
         <option value="$MODULE_DIR$/ReStartLearn/flaskDir/templates" />
+        <option value="$MODULE_DIR$/ReStartLearn/FlaskAndTodo/app/templates" />
       </list>
     </option>
   </component>
