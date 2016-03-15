@@ -8,12 +8,10 @@ import re
 print('想要抓取动态的数据 (js加载的数据)')
 
 
-
-
 def getComment(realurl):
     # 上面这个是获取数据后解析的过程
-    head = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; WOW64)'\
-                          ' AppleWebKit/537.36 (KHTML, like Gecko) '\
+    head = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; WOW64)' \
+                          ' AppleWebKit/537.36 (KHTML, like Gecko) ' \
                           'Chrome/43.0.2357.130 Safari/537.36'}
     # strurl = 'http://coral.qq.com/article/1165021596/comment?commentid=0&reqnum=50'
     jscontent = requests.get(realurl, headers=head).content.decode()  # content 后面加上这个decode()才行要不显示的是 byte 解析不出来
@@ -26,6 +24,7 @@ def getComment(realurl):
 
     return jsdata['last']
 
+
 # 解析对应的数据 返回一个json 字符串
 '''
 json1 = re.split('[re]', jsonStr)
@@ -34,7 +33,7 @@ json1 = re.split('[re]', jsonStr)
 '''
 
 
-def ParseJson(jsonstr):    # 解析出对应的json串
+def ParseJson(jsonstr):  # 解析出对应的json串
     json1 = re.split('[=;]', jsonstr)  # str.split(x) 后面的x 中是分割的符号 貌似不能多个一起用
     print(json1)
     return json1[1]
@@ -49,7 +48,6 @@ def GetCommentID(commenturl):
     return commentid
 
 
-
 def getVid(sourceurl):
     # vid 其实上面的网址里面就包含了这个了为了练习,去源代码中获取对应的一个 vid
     html = requests.get(sourceurl)
@@ -61,18 +59,18 @@ def getVid(sourceurl):
     vid = vidList[0]
     return vid
 
+
 def realCommentUrl(commentId):
     return 'http://coral.qq.com/article/%s/comment?commentid=0&reqnum=20' % commentId
 
 
 def regetRealCommentUrl(commentNumberId, commentId):
-        return 'http://coral.qq.com/article/%s/comment?commentid=%s&reqnum=20' % (commentId, commentNumberId)
+    return 'http://coral.qq.com/article/%s/comment?commentid=%s&reqnum=20' % (commentId, commentNumberId)
 
 
 # 待获取目标
 # sourceUrl = 'http://v.qq.com/cover/e/e4uer5m850721h8.html?vid==j0164r2thel'
 sourceUrl = 'http://v.qq.com/cover/e/e7hi6lep1yc51ca.html?vid=h0018p9ihom'
-
 
 vid = getVid(sourceUrl)
 
@@ -89,12 +87,8 @@ while True:
 
     str = getComment(commentrealUrl)
 
-    if not str:     # 当这个是 '' 时候 判断其实是一个bool  否的状态
+    if not str:  # 当这个是 '' 时候 判断其实是一个bool  否的状态
         print('结束了')
         break
     else:
         commentrealUrl = regetRealCommentUrl(str, commentID)
-
-
-
-

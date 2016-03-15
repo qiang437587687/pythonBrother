@@ -42,13 +42,14 @@ test5('han', 24, **extra)
 
 
 
-def test6(name, age, *, city, job): # 命名关键字函数必须传入 参数名
+def test6(name, age, *, city, job):   # 命名关键字函数必须传入 参数名
     print(name, age, city, job)
 
 # test6('zhang', 19, city='yantai', school='chang') # 报错了
 test6('zhang', 19, city='yantai', job='chang')
 
-def test7(name, age, *, city ='beijing', job): # 命名关键字 可以有默认参数
+
+def test7(name, age, *, city='beijing', job):   # 命名关键字 可以有默认参数
     print(name, age, city, job)
 
 test7('zhang', 19, job='chang')
@@ -70,9 +71,10 @@ def log(func):
         return func(*args, **kw)
     return wrapper
 
-
 # 装饰器的作用 这里相当于是执行了 函数 log(name)
 # 这样就是调用这个函数执行的相当于是 调用这个now 执行的是log中返回的wrapper
+
+
 @log
 def now():
     print('12345')
