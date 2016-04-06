@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>zhang</title>
+</head>
+<body>
+    {#这个就是 Django 和 jinja2 的语法区别#}
+
+{#     {% block 'zhang' %}#}
+{#     {% endblock %}#}
+
+    {% cycle '#red' '#blue' %} {# 下一行是 红色 在下一行是 蓝色 下面这个添加一个过滤器#}
+    <h1>hello {{ name|upper }} age {{ age|add:2 }} </h1>
+
+</body>
+</html>
