@@ -23,12 +23,12 @@ cur = conn.cursor()
 # cur.execute("INSERT INTO zhangTest(id, name) VALUES (14, 'xiu')")
 
 # cur.execute('SELECT * FROM zhang.zhangTest WHERE name = "%s"' % ('xiu'))   # 这个后面的数据貌似要添加一个 () 然后里面写上对用的东西
-cur.execute('SELECT * FROM zhang.zhangTest WHERE id > "%d"' % (10))
+cur.execute('SELECT * FROM zhang.zhangTest WHERE id > "%d"' % (0))
 
 result = cur.fetchall()  # 这个是取出对应的数据
 
-print(type(result[0]))   # 打印的是一个tuple
-print(result[0])         # (10, 'xiu')
+# print(type(result[0]))   # 打印的是一个tuple
+# print(result[0])         # (10, 'xiu')
 
 for res in result:
     print('id = %d' % res[0])

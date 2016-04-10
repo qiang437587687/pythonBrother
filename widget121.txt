@@ -1,0 +1,78 @@
+12.1 控件介绍
+
+在Kivy中控件是GUI的基础表现形式.它提供了一个可以在窗口上绘制的画布.它接收事件信息同时做出相应的动作.关于控件的详细解释请查阅控件章节的手册.
+
+12.2 控件树的操作
+    
+在kivy中控件以树(tree)的形式存在.应用都有一个根控件,它下面有子控件,子控件还有子控件..子控件有其对应的属性列表(Kivy Listproperty).
+    
+控件树有以下三种操作:                                                                                                                                  
+	1.add_widget():添加一个子控件.
+	2.remove_widget():在子控件列表中移除相应控件.                                             
+	3.clear_widget():清除所有子控件.
+
+例如想要在BoxLayout 中添加一个Button控件可以这样: 
+	
+	layout = BoxLayout(padding=10)	button = Button(text='My first button') 
+	layout.add_widget(button)
+
+button 添加到了layout上:button的父类属性指定为是layout,layout也添加了button到自己的子类列表.要移除button可以这样:
+
+	layout.remove_widget(button)
+
+当移除button,button对应的父类属性随之变成了None,同事layout的子类列表中也移除了button
+
+如果想清空所有的子控件用如下方法:
+	
+	layout.clear_widget()
+	
+	警告:(这个地方原文是有一个红色框框的, 排版请注意!)请不要改变子类列表,除非你真的能保证万无一失,因为控件树和图形树是相互关联的.当你添加一个控件到子类列表中但是并没有对应的画布到图形树中,那么这个控件在对应的列表中,但是画面上不会有对应的显示.更重要的是以后调用相应的add_widget() remove_widget() clear_widget()方法可能会出现一些未知错误. layout = BoxLayout(padding=10)button = Button(text='My first button') layout.add_widget(button)
+
+
+
+12.3 遍历控件树
+	
+控件对象的子类属性列表包含了所有的子类.可以很方便的遍历控件树:
+	
+	root = BoxLayout()	# 遍历root上添加控件 
+	for child in root.children:		print(child)
+	
+注意这么用的时候要非常的小心.就像前几章的那些方法一样,如果要想修改子类列表,你必须复制一个列表例子如下:
+	for child in root.children[:]:	# 清除所有宽度小鱼100 的控件.	if child.width < 100:		root.remove_widget(child)	
+
+默认情况下控件不会影响子控件的大小和位置(size/pos), POS属性是屏幕坐标的绝对位置(除非用了relativelayout),size是一个绝对的大小.
+
+
+12.4 控件的z轴(z-index)位置 
+
+绘制控件的顺序是依据控件树的,绘制顺序是后添加后绘制(包含父控件),添加一个控件可以添加一个z index(设置在树中的位置)
+	root.add_widget(widget, index)
+
+12.5 组织布局(Organize with Layouts)
+
+Layout 是一个控制子控件大小和位置的特殊控件. 多种不同种类的布局支持多种自动组织子类布局. Layout 有size_hint 和pos_hint 属性来决定子类的size和pos.
+
+BoxLayout:以相邻的方式来安排控件(无论水平还是垂直)使其填满空间. size_hint 属性能用来改变每一个子控件的比例,或者对某些子控件设置一个合适的size.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

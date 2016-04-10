@@ -12,7 +12,6 @@ import asyncio
 #     r = yield from asyncio.sleep(1)
 #     print('当前yield的r', r)
 #     print('hello agagin')
-#
 # loop = asyncio.get_event_loop()
 # loop.run_until_complete(hello())  # 这里面执行耗时的操作的时候不会等待  执行别的函数或者进程线程了
 # loop.close()
