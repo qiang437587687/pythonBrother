@@ -8,7 +8,7 @@
     
 控件树有以下三种操作:                                                                                                                                  
 	1.add_widget():添加一个子控件.
-	2.remove_widget():在子控件列表中移除相应控件.                                             
+	2.remove_widget():在子控件列表中移除相应控件.                                         
 	3.clear_widget():清除所有子控件.
 
 例如想要在BoxLayout 中添加一个Button控件可以这样: 
@@ -54,21 +54,441 @@ Layout 是一个控制子控件大小和位置的特殊控件. 多种不同种�
 
 BoxLayout:以相邻的方式来安排控件(无论水平还是垂直)使其填满空间. size_hint 属性能用来改变每一个子控件的比例,或者对某些子控件设置一个合适的size.
 
+GridLayout:以网格的方式排布控件.至少需要指定一个网格的纬度,然后kivy可以计算出各个元素的size然后把它们安置在屏幕上.
+
+StackLayout:按照设定防止一个一个的排布控件.设置好其中一个维度的size,但是不需要填满整个空间.用这个来显示预定义子控件的size时非常有用.
+
+AnchorLayout:仅需要知道子控件位置的简单布局.可以将子控件放在相对于当前布局的边界的位置.size_hint这时是不起作用的.
+
+FloatLayout:允许子控件有任意的大小并且可以放在任意的位置,无论是绝对的或者是相对的layout size.默认的 size_hint(1,1)能使得每一个子控件都和整个layout的size相同,所以当你有多个子控件的时候就需要修改这个数值了
+你可以设置size_hint（None，None）来使用绝对尺寸.这个控件也遵循 pos_hint,post_hint以字典的形式来设置和layout位置的相关性.
+
+RelativeLayout:作用方法如同FloatLayout,除了子控件的位置是相对布局,并不包括屏幕(screen)
+
+查看布局的相关文档以加深了解.
+
+size_hint和pos_hint:
+	
+	floatlayout
+	boxlayout
+	gridlayout
+	stack layout
+	relativelayout
+	anchorlayout
+
+size_hint是ReferenceListProperty类型有size_hint_x和size_hint_y.它的值是0-1或者是None,默认的是(1,1).这也就是说明如果控件在布局范围内的话,当前布局会尽可能的在两个方向上分配更大的空间(和layout size相关).
+
+举例来说设置size_hint为(0.5, 0.8)这样使得控件在当前的布局下面占有效布局宽度的50%有效高度的80%.
+	例子如下:
+	BoxLayout: Button:		text: 'Button 1'		# 默认的就是(1,1)其实不用写出来的不过写出来会更加明了 				size_hint: 1, 1
+
+加载 kivy catalog:
+	   
+	   cd $KIVYDIR/examples/demo/kivycatalog	   python main.py
+
+用你的安装路径替换KIVYDIR(译者注:这里可以去github上下载demo运行安装的kivy不一定带有demo),点击左面的Box Layout,现在粘贴上面的代码到代码框里面然后就能在面板上看到相应的结果了.
+
+———>图片
+可以看到上面的照片显示出 button 占据了layout size大小的100%.
+改变size_hint_x/size_hint_y 为0.5 这样控件就将占据50%的layout width/height
+
+———>图片
+
+从上面的图片可以看出虽然你设置了size_hint_x 和 size_hint_y 但是貌似只有size_hint_x执行了,这是因为boxlayout会在你设定orientation(方向)为vertical(竖直)的时候控制size_hint_y,当orientation设置为’horizontal’时box layout会控制size_hint_x.被控制的维度(指的是size_hint_x或者是size_hint_y)是通过对boxlayout内全部的子控件计算获得的.在上图例子中,其中的子控件的size_hint_y是被控制的(.5/.5 = 1),这样计算起来这个子控件就是占据了layout的整个高度(也就是根据公式的来的结果).
+
+让我恩么呢看看另外一个button在对应layout下的表现吧!
+
+—> 图片.
+
+boxlayout很自然的将空间分给了子控件,在上图例子中,是55开的分割方法,因为只有两个子控件.下面来设置一下子控件的size_hint然后再来看看对应的结果吧!
+
+—>>图片
+
+子控件指定了size_hint之后,这就指定了boxlayout如何去分配空间给对应的控件.在我们的例子中,第一个button分配了.5给size_hint_x,那么计算控件的方法就像下面这样:
+
+	first child's size_hint divided by	first child's size_hint + second child's size_hint + ...n(no of children)	
+	.5/(.5+1) = .333…(译者注:这地方要注意一下是不是设置了orientation)
+
+剩下的宽度依照剩下的子控件的size_hint进行分配.在我们的例子意味着剩下的66.66%的layout 宽度都讲分配给第二个button.
+
+不断的尝试size_hint去寻找一个合适的宽度.
+
+如果你想控制一个小部件的绝对尺寸,你可以设置 size_hint_x/size_hint_y 或者是两者都设置成None,这样控件的宽高属性就会起作用.
+
+pos_hint是一个字典,默认是空.相对比size_hint,pos_hint的布局规则有所不同,但是可以往pos的属性里面添加多种属性(x, y, left, top, center_x, center_y),通过他的父类确定控件的位置..
 
 
+让我们在kivycatalog中输入如下的代码来看看视觉效果:
+
+FloatLayout: 
+	Button:		text: "We Will" 
+		pos: 100, 100 
+		size_hint: .2, .4	Button:		text: "Wee Wiill" 
+		pos: 200, 200 
+		size_hint: .4, .2	Button:		text: "ROCK YOU!!"		pos_hint: {'x': .3, 'y': .6} 
+		size_hint: .5, .2
+
+执行结果如图所示:
+
+——>>图片
+
+就像size_hint一样,你需要用实验的方法来对pos_hint来加深理解.(译者注:可以设置pos属性来确定位置这里面的坐标系是数学坐标系).
+
+12.6 给布局(layout)添加一个背景(Background)
+
+一个关于布局最常见的问题是:
+	如何添加一个 背景图片/背景颜色/背景视频 到 一个布局上.
+
+布局因为其性质是不可见的:他们没有布局指令.不过你能往一个布局对象上轻松添加布局指令,下面就添加一个背景颜色:
+	python中:
+	
+	from kivy.graphics import Color, Rectangle	
+		with layout_instance.canvas.before:			Color(0, 1, 0, 1) # green; colors range from 0-1 instead of 0-255 
+		self.rect = Rectangle(size=layout_instance.size,pos=layout_instance.pos)
+很不幸, 这么做只能在初始的位置以size大小绘制一个矩形. 为了确保矩形是绘制在布局内,我们需要监听任何的size/pos的改变去对矩形的位置和大小进行调整.我们可以写如下代码来解决这个问题:
 
 
+		with layout_instance.canvas.before:			Color(0, 1, 0, 1) # green; colors range from 0-1 instead of 0-255 
+		self.rect = Rectangle(size=layout_instance.size,pos=layout_instance.pos)
+	
+		def update_rect(instance, value): 
+			instance.rect.pos = instance.pos 											instance.rect.size = instance.size			# 监听size 和pos 的变化.		layout_instance.bind(pos=update_rect, size=update_rect)
 
 
+		在 kv 文件中:
+		FloatLayout: 
+			canvas.before:				Color:					rgba: 0, 1, 0, 1				Rectangle:				# self here refers to the widget i.e BoxLayout 
+				pos: self.pos				size: self.size
+
+kv文件声明设置了一个隐式绑定:kv文件的最后两行确保在floatlayout的pos变化的时候矩形的pos和size能得到相应的更新或者变化.
+
+现在我们将上面的代码段插入一段Kivy App代码中:
+
+纯python方法:
+
+from kivy.app import App
+from kivy.graphics import Color, Rectangle
+from kivy.uix.floatlayout import FloatLayout
+from kivy.uix.button import Button
 
 
+class RootWidget(FloatLayout):
+
+    def __init__(self, **kwargs):
+        # 确保我们不会覆盖任何重要的功能.
+        super(RootWidget, self).__init__(**kwargs)
+        # 添加一个控件到当前的layout上
+        self.add_widget(
+            Button(
+                text="Hello World",
+                size_hint=(.5, .5),
+                pos_hint={'center_x': .5, 'center_y': .5}))
 
 
+class MainApp(App):
+
+    def build(self):
+        self.root = root = RootWidget()
+        root.bind(size=self._update_rect, pos=self._update_rect)
+
+        with root.canvas.before:
+            Color(0, 1, 0, 1) # green; colors range from 0-1 not 0-255
+            self.rect = Rectangle(size=root.size, pos=root.pos)
+
+        return root
+
+    def _update_rect(self, instance, value):
+        self.rect.pos = instance.pos
+        self.rect.size = instance.size
+
+if __name__ == '__main__':
+    MainApp().run()
 
 
+使用kivy语言:
+
+from kivy.app import App
+from kivy.lang import Builder
+root = Builder.load_string('''
+FloatLayout:
+    canvas.before:
+        Color:
+            rgba: 0, 1, 0, 1
+        Rectangle:
+            # self here refers to the widget i.e FloatLayout
+            pos: self.pos
+            size: self.size
+    Button:
+        text: 'Hello World!!'
+        size_hint: .5, .5
+        pos_hint: {'center_x':.5, 'center_y': .5}
+''')
 
 
+class MainApp(App):
+    def build(self):
+        return root
 
+if __name__ == '__main__':
+    MainApp().run()
+
+上面两段代码运行结果都是这样:
+
+——>>>图片.
+
+
+为自定义的布局规则/类添加一个背景颜色:
+
+如果我们需要多重布局那么以上我们给布局对象添加颜色的方法很快就会非常麻烦.为了解决这个问题,你可以继承Layout,创建一个你自己的layout然后添加一个背景.
+
+
+使用python的方式:
+
+
+from kivy.app import App
+from kivy.graphics import Color, Rectangle
+from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.floatlayout import FloatLayout
+from kivy.uix.image import AsyncImage
+
+
+class RootWidget(BoxLayout):
+    pass
+
+
+class CustomLayout(FloatLayout):
+
+    def __init__(self, **kwargs):
+        # make sure we aren't overriding any important functionality
+        super(CustomLayout, self).__init__(**kwargs)
+
+        with self.canvas.before:
+            Color(0, 1, 0, 1)   # green; colors range from 0-1 instead of 0-255
+            self.rect = Rectangle(size=self.size, pos=self.pos)
+            self.bind(size=self._update_rect, pos=self._update_rect)
+
+    def _update_rect(self, instance, value):
+        self.rect.pos = instance.pos
+        self.rect.size = instance.size
+
+
+class MainApp(App):
+    def build(self):
+        root = RootWidget()
+        c = CustomLayout()
+        root.add_widget(c)
+        c.add_widget(
+            AsyncImage(
+                source="http://www.everythingzoomer.com/wp-content/uploads/2013/01/Monday-joke-28",
+                size_hint=(1, .5),
+                pos_hint={'center_x': .5, 'center_y': .5}))
+
+        root.add_widget(AsyncImage(source='http://www.stuffistumbledupon.com/wp-content/uploads/2'))
+        c = CustomLayout()
+        c.add_widget(
+            AsyncImage(
+                source="http://www.stuffistumbledupon.com/wp-content/uploads/2012/04/Get-a-Girlfr",
+                size_hint=(1, .5),
+                pos_hint={'center_x': .5, 'center_y': .5}))
+        root.add_widget(c)
+        return root
+
+if __name__ == '__main__':
+    MainApp().run()
+
+
+使用 kv 的方法:
+
+
+from kivy.app import App
+from kivy.uix.floatlayout import FloatLayout
+from kivy.uix.boxlayout import BoxLayout
+from kivy.lang import Builder
+Builder.load_string('''
+<CustomLayout>
+    canvas.before:
+        Color:
+            rgba: 0, 1, 0, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+<RootWidget>
+    CustomLayout:
+        AsyncImage:
+            source: 'http://www.everythingzoomer.com/wp-content/uploads/2013/01/Monday-joke-289x2'
+            size_hint: 1, .5
+            pos_hint: {'center_x':.5, 'center_y': .5}
+    AsyncImage:
+        source: 'http://www.stuffistumbledupon.com/wp-content/uploads/2012/05/Have-you-seen-this-'
+    CustomLayout
+        AsyncImage:
+            source: 'http://www.stuffistumbledupon.com/wp-content/uploads/2012/04/Get-a-Girlfrien'
+            size_hint: 1, .5
+            pos_hint: {'center_x':.5, 'center_y': .5}
+''')
+
+
+class RootWidget(BoxLayout):
+    pass
+
+
+class CustomLayout(FloatLayout):
+    pass
+
+
+class MainApp(App):
+
+    def build(self):
+        return RootWidget()
+
+if __name__ == '__main__':
+    MainApp().run()
+
+
+两份代码的运行结果都是如下所示(译者注:其中的图片可能加载不出来,可以换个图片):
+
+——>图片
+
+在自定义布局类定义了背景要确保它将用于customlayout每个实例.
+
+现在,为一个内建的ivy Layout添加一个图像或者颜色背景,我们需要为有问题(或者翻译为争议)的layout(布局)全局的重写 kv 规则.考虑一下GridLayout:
+
+<GridLayout> 
+	canvas.before:		Color:			rgba: 0, 1, 0, 1	BorderImage:		source: '../examples/widgets/sequenced_images/data/images/button_white.png' 
+		pos: self.pos
+		size: self.size  
+
+将上面的代码片段添加到一个Kivy App中:
+
+from kivy.app import App
+from kivy.uix.floatlayout import FloatLayout
+from kivy.lang import Builder
+
+Builder.load_string('''
+<GridLayout>
+    canvas.before:
+        BorderImage:
+            # BorderImage behaves like the CSS BorderImage
+            border: 10, 10, 10, 10
+            source: '../examples/widgets/sequenced_images/data/images/button_white.png' 
+            pos: self.pos
+            size: self.size
+<RootWidget>
+    GridLayout:
+        size_hint: .9, .9
+        pos_hint: {'center_x': .5, 'center_y': .5}
+        rows:1
+        Label:
+            text: "I don't suffer from insanity, I enjoy every minute of it"
+            text_size: self.width-20, self.height-20
+            valign: 'top'
+            
+        Label:
+            text: "When I was born I was so surprised; I didn't speak for a year and a half."
+            text_size: self.width-20, self.height-20
+            valign: 'middle'
+            halign: 'center'
+            
+        Label:
+            text: "A consultant is someone who takes a subject you understand and makes it sound
+            text_size: self.width-20, self.height-20
+            valign: 'bottom'
+            halign: 'justify'
+''')
+
+
+class RootWidget(FloatLayout):
+    pass
+
+
+class MainApp(App):
+    def build(self):
+        return RootWidget()
+
+if __name__ == '__main__': 
+    MainApp().run()
+
+
+ 上面的运行结果如下:
+
+——>图片
+
+
+当我们重写了FridLayout的布局规则之后,任何一个使用了这个类创建的app都将显示image.
+
+那么动态背景咋整?
+
+你可以设置绘图指令如矩形/椭圆/ borderimage /…使用特殊纹理:
+
+Rectangle:	texture: reference to a texture
+
+我们用这个来显示一个动态背景:
+
+from kivy.app import App
+from kivy.uix.floatlayout import FloatLayout
+from kivy.uix.gridlayout import GridLayout
+from kivy.uix.image import Image
+from kivy.properties import ObjectProperty
+from kivy.lang import Builder
+
+Builder.load_string('''
+<CustomLayout>
+    canvas.before:
+        BorderImage:
+            # BorderImage behaves like the CSS BorderImage
+            border: 10, 10, 10, 10
+            texture: self.background_image.texture
+            pos: self.pos
+            size: self.size
+
+<RootWidget>
+    CustomLayout:
+        size_hint: .9, .9
+        pos_hint: {'center_x': .5, 'center_y': .5}
+        rows:1
+        Label:
+            text: "I don't suffer from insanity, I enjoy every minute of it"
+            text_size: self.width-20, self.height-20
+            valign: 'top'
+        Label:
+            text: "When I was born I was so surprised; I didn't speak for a year and a half."
+            text_size: self.width-20, self.height-20
+            valign: 'middle'
+            halign: 'center'
+        Label:
+            text: "A consultant is someone who takes a subject you understand and makes it sound"
+            text_size: self.width-20, self.height-20
+            valign: 'bottom'
+            halign: 'justify'
+''')
+
+
+class CustomLayout(GridLayout):
+    background_image = ObjectProperty( 
+            Image(source='../examples/widgets/sequenced_images/data/images/button_white_animated.zip', anim_delay=.1))
+
+
+class RootWidget(FloatLayout):
+    pass
+
+
+class MainApp(App):
+    def build(self):
+        return RootWidget()
+
+if __name__ == '__main__':
+    MainApp().run()
+
+
+想要了解发生了什么??从第13行开始:
+
+texture: self.background_image.texture
+
+这行代码指定了当texture的background_image属性更新的时候texture的Borderimage属性也会更新.在低40行定义了background_image属性:
+
+background_image = ObjectProperty(… 
+
+当我们添加一个图片控件(Image widget)时,这个设定好的background_image可以当做一个Objectproperty(译者注:当做固有属性)
 
 
 
