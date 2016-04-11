@@ -489,6 +489,25 @@ texture: self.background_image.texture
 background_image = ObjectProperty(… 
 
 当我们添加一个图片控件(Image widget)时,这个设定好的background_image可以当做一个Objectproperty(译者注:当做固有属性)
+一个图片空间拥有一个texture属性,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
