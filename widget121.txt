@@ -8,7 +8,7 @@
     
 控件树有以下三种操作:                                                                                                                                  
 	1.add_widget():添加一个子控件.
-	2.remove_widget():在子控件列表中移除相应控件.                                         
+	2.remove_widget():在子控件列表中移除相应控件.
 	3.clear_widget():清除所有子控件.
 
 例如想要在BoxLayout 中添加一个Button控件可以这样: 
@@ -489,16 +489,27 @@ texture: self.background_image.texture
 background_image = ObjectProperty(… 
 
 当我们添加一个图片控件(Image widget)时,这个设定好的background_image可以当做一个Objectproperty(译者注:当做固有属性)
-一个图片空间拥有一个texture属性,
+一个图片控件拥有一个texture属性,无论在哪里使用了self.background_image.texture都会设置一个引用和texture属性.这个图片控件支持动画效果:无论何时动画改变了,动画的texture都会随之改变同时在此过程中BorderImgae指令的texture也会随之改变.
+
+你也可以显示自定义数据结构,详情请看Texture的文档.
 
 
+12.7 布局嵌套(Nesting Layouts)
+
+Yes! 这个扩展的过程一定会很有趣.
+
+12.8 位置和大小的度量
+
+Kivy的默认长度单位是像素,所有的大小和位置都是以像素位置和大小来表现的.当然如果可以让你的程序的承载设备有更好的一致性,你也可以用其他的丈量单位来展现它们(这些丈量的方法会自动的转换为像素).
+
+可用的丈量单位有pt, mm, cm, inch, dp 和 sp. 你可以在metrics的文档中学习相关内容.
+
+你也可以用多种不同设备来模拟你的应用程序的在其屏幕闪的表现.
 
 
+12.9 屏幕从屏幕管理器中分离.
 
-
-
-
-
+如果你的应用程序要适配多个屏幕,你可能想要有非常简单的方法能实现从一个到另一个的适配.幸运的是,有一个ScreenManager的类,这个类能让你分开定义屏幕,并且设置一个屏幕到另一个屏幕的Transitionbase.
 
 
 
