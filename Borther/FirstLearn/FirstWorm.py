@@ -8,6 +8,7 @@ logging.basicConfig(level=logging.INFO)
 
 
 html = requests.get('http://www.qiushibaike.com')
+
 print('html.url ===> ', html.url)
 # html.encoding = 'utf-8'
 print('html encoding ===>', html.encoding)  # 注意不同的编码之间可能需要转换
@@ -30,19 +31,18 @@ chinese = re.findall(tr, html.text, re.S)
 
 # logging.info('chinese print is >>> %s ' % chinese)
 
-list1 = ['zhang', '222']
 # print(str.count())   # 这不是ios  数组list也不能 用 count  要用len(list) 的方式求长度
-print(len(chinese))
+# print(len(chinese))
 
-for each in chinese:
-    print(each)
+# for each in chinese:
+#     print(each)
 
 # 现在取出来了 保存到一个txt文件里面  这个里面如果是用 'w'那么就是每次都覆盖的  如果是'a' 那么每次都是追加的~
-fw = open('/Users/zhangxianqiang/Desktop/pythonBrother/Borther/FirstWorm.txt', 'w')
-for each in chinese:
-    # print(each)
-    fw.write(each)
-fw.close()
+with open('/Users/zhangxianqiang/Desktop/pythonBrother/Borther/FirstWorm.txt', 'w') as fw:
+    for each in chinese:
+        print(each)
+        fw.write(each)
+    fw.close()
 
 
 

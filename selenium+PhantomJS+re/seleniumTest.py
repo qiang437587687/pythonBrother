@@ -1,5 +1,6 @@
 from selenium import webdriver
 import re
+
 diver = webdriver.PhantomJS()
 
 diver.get('http://www.qiushibaike.com/')
@@ -7,6 +8,9 @@ diver.get('http://www.qiushibaike.com/')
 # print(type(diver.page_source))
 
 # print(diver.page_source)
+
+# js = "var q=document.documentElement.scrollTop=10000"
+# diver.execute_script(js)
 
 html = diver.page_source
 
@@ -24,6 +28,8 @@ for each in chinese:
 with open('/Users/zhangxianqiang/Desktop/qiushi.txt', 'w') as fw:
     for each in chinese:
         fw.write(each)
+
+
 
 
 
