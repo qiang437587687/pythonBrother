@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择器</title>
+    <link rel="stylesheet" href="selectorStyle.css">
+    <style>
+        [title]{
+            color: aqua;
+        }
+        /*指定对应的属性值*/
+        [href="http://www.handabao.com"]{
+            font-size: 30px;
+        }
+
+        /*模糊匹配 只要有title就能使用*/
+        [title~='title']{
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!--<p>hello world</p>-->
+    <!--<h1>标题1</h1>-->
+    <!--<h2>标题2</h2>-->
+
+<!--class 的使用-->
+    <!--<div class="div">-->
+        <!--hello zhang-->
+    <!--</div>-->
+    <!--<a class="div">zhang</a>-->
+
+
+    <!--<p class="p1">这是一个web page</p>-->
+    <!--<p class="p2">这是第二个web page</p>-->
+    <!--&lt;!&ndash;注意这里面的 p1 p2 中间的空格&ndash;&gt;-->
+    <!--<p class="p1 p2">这是第三个web page</p>-->
+
+    <!--属性选择器-->
+    <p title="tit">hello</p>
+    <p title="title">hello</p>
+    <p title="t">hello</p>
+    <p title="title hello">hello</p>
+    <a href="http://www.handabao.com">张宪强</a>
+
+    <!--后代选择器 css 里面设置的.-->
+    <!--<p> this is my <strong>web hello <i>hello</i> </strong> page</p>-->
+
+    <!--子元素选择器 只能选中子元素 孙子元素是不行的-->
+    <p> this is my <strong>web hello </strong> page</p>
+
+
+    <div>
+        <ul>
+            <li>item1</li>
+            <li>item2</li>
+            <li>item3</li>
+            <li>itme4</li>
+        </ul>
+        <ol>
+            <li>item11</li>
+            <li>item22</li>
+            <li>item33</li>
+        </ol>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+p{
+    width: 300px;
+    /*outline-style: groove;*/
+    outline-width: 20px;
+    outline-color: red;
+    outline-style: inset;
+
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            background-color: black;
+            border: dashed 15px green;
+            padding: 30px;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+
+            background-image: url("close.png");
+            background-repeat: no-repeat;
+        }
+
+        .div1{
+            background-origin: border-box;
+            background-clip: border-box;
+        }
+
+        .div2{
+            margin-top: 40px;
+            background-origin: content-box;
+            background-clip: content-box;
+        }
+
+        .div3{
+            margin-top: 40px;
+            background-origin: padding-box;
+            background-clip: padding-box;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="div1">实例1</div>
+    <div class="div2">实例2</div>
+    <div class="div3">实例2</div>
+</body>
+</html>

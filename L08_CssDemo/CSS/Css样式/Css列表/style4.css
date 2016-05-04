@@ -1,0 +1,20 @@
+
+/*简单的一些图形空心圆数字等*/
+/*ul li{*/
+    /*list-style-type: circle;*/
+/*}*/
+
+/*图片作为一个前面的引导*/
+/*ul li{*/
+    /*list-style-image: url("456.png");*/
+/*}*/
+
+ul.ul1 {
+    list-style-position: inside;
+}
+
+ul.ul2{
+    list-style-position: outside;
+}
+
+

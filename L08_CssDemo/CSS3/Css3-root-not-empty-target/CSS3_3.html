@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*根元素 整个 html*/
+        :root{
+            background: grey;
+        }
+        /*如果上面设置了 root 那么body 就是指内容区域 如果没有设置那么就是全屏*/
+        body{
+            background: yellow;
+        }
+
+        /*排除一个标签*/
+        div *:not(h1){
+            color: #FF0000;
+        }
+
+        /*指定当前元素为空的时候怎么显示*/
+        :empty {
+            background-color: burlywood;
+        }
+        /*target -- 点击了之后改变效果*/
+        :target{
+            background-color: chartreuse;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>你好?么?????</h2>
+        <h1>这里是标题</h1>
+        <p>这里是一个p标签</p>
+    </div>
+    <table border="1">
+        <tr>
+            <td>111111</td>
+            <td>222222</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>222222</td>
+        </tr>
+        <tr>
+            <td>111111</td>
+            <td>222222</td>
+        </tr>
+        <tr>
+            <td>111111</td>
+            <td></td>
+        </tr>
+    </table>
+    <br/>
+    <a href="#a1">菜单1</a>
+    <a href="#a2">菜单2</a>
+    <a href="#a3">菜单3</a>
+    <a href="#a4">菜单4</a>
+
+    <div id="a1">
+        <h1>菜单1</h1>
+        <p>菜单1内容</p>
+    </div>
+
+    <div id="a2">
+        <h1>菜单1</h1>
+        <p>菜单1内容</p>
+    </div>
+
+    <div id="a3">
+        <h1>菜单1</h1>
+        <p>菜单1内容</p>
+    </div>
+
+    <div id="a4">
+        <h1>菜单1</h1>
+        <p>菜单1内容</p>
+    </div>
+
+
+</body>
+</html>

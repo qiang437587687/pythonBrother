@@ -1,0 +1,35 @@
+
+/*body{*/
+    /*margin: 0px;*/
+/*}*/
+
+/*.mg{*/
+    /*background-color: aqua;*/
+    /*width: 100px;*/
+    /*height: 100px;*/
+    /*margin: 100px; !*上下左右全是100px*!*/
+    /*margin-top: 10px; !*上下左右*!*/
+/*}*/
+
+
+/*盒子模型*/
+
+body {
+    margin: 0px;
+}
+
+.container {
+    margin: 10px;
+}
+
+.bd {
+    border-style: groove;
+}
+
+.pd {
+    padding: 100px;
+}
+
+.content {
+    background-color: aqua;
+}

@@ -1,0 +1,35 @@
+body{
+    margin: 10px auto;
+    width: 70%;
+    height: auto;
+    background-color: orange;
+
+}
+.image{
+    border: 1px solid darkgray;
+    width: auto;
+    height: auto;
+    float: left;
+    text-align: center;
+    margin: 5px;
+}
+
+img{
+    margin: 5px;
+    opacity: 1;
+}
+.text{
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+a:hover{
+    background-color: aqua;
+}
+
+
+
+
+
+
+

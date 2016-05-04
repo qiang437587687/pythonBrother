@@ -1,0 +1,31 @@
+p{
+    /*border-style: dotted; !*样式 共有10种 不能继承??不知道啥意思*!*/
+    /*border-top-style: double; !*改变上面的边框为双线.*!*/
+
+    /*border-width: 10px;*/
+    /*border-top-width: 10px;*/
+
+    /*border-color: aqua;*/
+    /*border-top-color: aqua;*/
+
+    /*圆角边框*/
+    border-radius: 10px;
+    width: 300px;
+    background-color: aqua;
+    text-align: center;
+
+    border: 2px solid blue;
+}
+
+.cssid {
+
+    background-color: aqua;
+
+    width: 100px;
+    height:100px;
+
+    text-align: center;
+    box-shadow: 10px 10px 5px red;
+
+    /*border-image: ;*/
+}

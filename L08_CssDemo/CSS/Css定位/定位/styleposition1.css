@@ -1,0 +1,47 @@
+#position1{
+    width: 100px;
+    height: 100px;
+    background-color: coral;
+
+    /*相对布局*/
+    position: relative;
+    left: 20px;
+    top:20px;
+
+    /*绝对布局 不再占有位置*/
+    /*position: absolute;*/
+
+    /*一直浮动在界面上*/
+    /*position: fixed;*/
+
+    /*静态布局  设置成这个的时候偏移量是不起效果的.*/
+    /*position: static;*/
+    z-index:2;
+
+}
+
+#position2{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+
+    position: relative;
+    left: 10px;
+    top: 10px;
+
+    z-index: 1;
+}
+#position3{
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+
+    position: relative;
+    left: 5px;
+    top: 5px;
+
+    z-index: 40;
+}
+
+
+

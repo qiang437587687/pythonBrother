@@ -1,0 +1,78 @@
+
+/*基本样式*/
+/*h1,a,h2{*/
+    /*color: blue;*/
+    /*font-size: 50px;*/
+/*}*/
+
+/*body{ */
+    /*color: red;*/
+/*}*/
+
+/*p{*/
+    /*color: yellow;*/
+/*}*/
+
+
+/*派生选择器 列表中的 strong标签 显示的是 red*/
+/*li strong{*/
+    /*color: red;*/
+/*}*/
+/*strong{*/
+    /*color: aqua;*/
+/*}*/
+
+
+/*id 选择器*/
+
+/*#pid{*/
+    /*color: blueviolet;*/
+/*}*/
+/*#div1{*/
+    /*color: yellow;*/
+/*}*/
+
+/*派生选择器 指定对应的 id 下面的 标签效果.*/
+/*#pid a{*/
+    /*color: blue;*/
+/*}*/
+
+
+/*类选择器*/
+.pclass{
+    color: red;
+}
+
+.divclass{
+    color: yellow;
+}
+/*类选择器和 派生选择器的结合应用*/
+.divclass a{
+    color: cornflowerblue;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!--我曹直接在这里加载了?-->
+    <style>
+        /*包含div 的就会被选择到*/
+        [id*=div]{
+            color: red;
+        }
+        /*只有首字母是div 的就会被执行*/
+        [id^=div] {
+            color: aqua;
+        }
+        /*结束字符是div 的添加如下效果 如果是 数字那么要 添加 \ 进行转义*/
+        [id$=div]{
+            color: burlywood;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div id="div1">示例文本1</div>
+    <div id="div2">示例文本2</div>
+    <div id="div3">示例文本3</div>
+    <div id="mydiv4">示例文本4</div>
+    <div id="my4div">示例文本4</div>
+    <div id="my">示例文本4</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input[type="checkbox"]:checked{
+            outline:2px solid gold;
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" name="radio">阅读
+    <input type="checkbox" name="radio">上网
+    <input type="checkbox" name="radio">看电影
+    <input type="checkbox" name="radio">上班
+
+    <!--写上name 代表互斥啊....-->
+    <input type="radio" id="radio1" name="radio" >可用
+    <input type="radio" id="radio12"  >可用
+    <input type="radio" id="radio13" name="radio" onchange="radio_change()">可用
+    <input type="radio" id="radio14" name="radio" onchange="radio_change()">可用
+    <input type="radio" id="radio15" name="radio" onchange="radio_change()">可用
+
+
+</body>
+</html>

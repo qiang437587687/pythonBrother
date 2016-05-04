@@ -1,0 +1,21 @@
+div{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    -webkit-transition: width 2s, height 2s, transform 2s;
+    transition: width 2s, height 2s, transform 2s;
+
+    /*延时执行.*/
+    -webkit-transition-delay: 2s;
+    -moz-transition-delay: 2s;
+    -ms-transition-delay: 2s;
+    -o-transition-delay: 2s;
+    transition-delay: 2s;;
+}
+
+div:hover{
+    width: 200px;
+    height: 200px;
+    transform: rotate(360deg);
+    -webkit-transition: rotate(360deg);
+}

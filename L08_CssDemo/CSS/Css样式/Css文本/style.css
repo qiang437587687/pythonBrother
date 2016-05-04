@@ -1,0 +1,53 @@
+/*颜色*/
+/*body {*/
+    /*color: red;*/
+/*}*/
+
+/*对其方式*/
+
+/*p{*/
+    /*color: red;*/
+    /*!*text-align: right;*!*/
+    /*text-align: center;*/
+/*}*/
+
+
+/*h1 {*/
+    /*text-indent: -2em;*/
+    /*padding-left: 2em;*/
+/*}*/
+
+/*p{*/
+    /*padding-left: 2em;*/
+/*}*/
+
+
+/*首字母大写 全部大写 或者全部小写的方法*/
+/*#p1 {*/
+    /*text-transform: capitalize;*/
+/*}*/
+
+/*!*全部变成小写*!*/
+/*#p2 {*/
+    /*text-transform: lowercase;*/
+/*}*/
+
+/*!*全部变成大写*!*/
+/*#p3 {*/
+    /*text-transform: uppercase;*/
+/*}*/
+
+
+/*!*设置背景颜色*!*/
+/*p{*/
+    /*!*背景距离左面的位置  背景文本距离上方的位置  清晰度设置 背景颜色*!*/
+    /*text-shadow: 100px 5px 3px #FF0000;*/
+/*}*/
+
+/*换行模式*/
+p{
+    width: 300px;
+    text-wrap: normal;
+}
+
+

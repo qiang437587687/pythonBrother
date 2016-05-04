@@ -1,0 +1,84 @@
+
+/*背景颜色和背景图片*/
+
+/*body{*/
+    /*background-color: gray;*/
+    /*background-image: url("123.png");*/
+    /*background-repeat: no-repeat; !*不允许重复*!*/
+/*}*/
+
+/*p{*/
+    /*width: 150px;*/
+    /*padding: 10px; !*内边距*!*/
+    /*background-color: yellow;*/
+    /*background-image: url("123.png");*/
+/*}*/
+
+
+
+/*位置  position*/
+/*body{*/
+    /**/
+    /*background-image: url("123.png");*/
+    /*background-repeat: no-repeat; !*不允许重复*!*/
+    /*!*right这个属性 实际上代表的是 right(显示位置) 和 center(从哪开始显示)*!*/
+    /*!*background-position: right;*!*/
+
+    /*!*top left bottom right center*!*/
+    /*!*background-position: right top;*!*/
+
+    /*!*也可以写一个像素来代表显示的位置*!*/
+    /*!*background-position: 100px 100px;*!*/
+
+    /*!*可以用百分多少来确定位置*!*/
+    /*!*background-position: 10% 10%;*!*/
+
+/*}*/
+
+
+
+/*attachment 是不是跟着内容滚动*/
+
+/*body{*/
+    /*background-image: url("123.png");*/
+    /*background-repeat: no-repeat;*/
+    /*!*随着滚动*!*/
+    /*!*background-attachment: scroll;*!*/
+    /*!*不随着滚动*!*/
+    /*!*background-attachment: fixed;*!*/
+
+/*}*/
+
+/*size*/
+body{
+    background-image: url("123.png");
+    background-repeat: no-repeat;
+    /*随着滚动*/
+    /*background-attachment: scroll;*/
+    /*不随着滚动*/
+    /*background-attachment: fixed;*/
+
+    /*background-size: 100px 100px;*/
+
+    /*这个是规定北京的一个原始区域从哪里开始 现在选择的这个是根据内容来确定的*/
+    /*background-origin: content-box;*/
+
+    /*裁剪区域 根据内容来裁剪背景的大小*/
+    /*background-clip: content-box;*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

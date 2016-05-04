@@ -1,0 +1,39 @@
+
+#container{
+    width:300px;
+    height: 500px;
+
+    background-color: gray;
+}
+
+#fd{
+    width: 100px;
+    height: 150px;
+
+    background-color: red;
+    float: left;
+}
+
+#sd{
+    width: 150px;
+    height: 100px;
+
+    background-color: blue;
+    float: left;
+
+}
+
+#td{
+    width: 100px;
+    height: 100px;
+
+    background-color: yellow;
+    float: left;
+
+}
+
+/*这个text 为什么也会有float 的left 特性?*/
+#text{
+    clear: left;
+    /*clear: both;*/
+}

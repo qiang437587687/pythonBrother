@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>结构性伪类选择器</title>
+    <style>
+        /*first line 第一行使用样式*/
+        p:first-line {
+            color: crimson;
+        }
+        /*first letter 用于首字母改变颜色*/
+        p:first-letter {
+            color: blue;
+        }
+        /*before 在某一个元素前面插入内容*/
+        li:before{
+            content: "----------";
+        }
+        /*和上面对应的效果*/
+        li:after{
+            content: "添加一点文字";
+            font-size: 10px;
+            color: blueviolet;
+        }
+
+        li{
+            list-style: decimal;
+        }
+
+    </style>
+</head>
+<body>
+    <p>这个是在第一行的内容 <br/> 第二行的数据</p>
+    <ul>
+        <li>列表1</li>
+        <li>列表1</li>
+        <li>列表1</li>
+        <li>列表1</li>
+        <li>列表1</li>
+        <li>列表1</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,38 @@
+body {
+    margin: 0px;
+}
+
+.container {
+    margin: 50px;  /*这个和下面的margin 是表示边距的 但是 两个加起来
+     应该是 50+100 不过总的距离是100 也就是两个margin是已相对较大的margin来确定大小的*/
+}
+
+.bd {
+    border-style: groove;
+}
+
+.pd {
+    padding: 100px;
+}
+
+.content {
+    background-color: aqua;
+}
+
+
+
+.container1 {
+    margin: 100px;
+}
+
+.bd1 {
+    border-style: groove;
+}
+
+.pd1 {
+    padding: 100px;
+}
+
+.content1 {
+    background-color: aqua;
+}

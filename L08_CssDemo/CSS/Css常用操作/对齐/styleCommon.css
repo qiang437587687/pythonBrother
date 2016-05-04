@@ -1,0 +1,23 @@
+*{
+    margin: 0px;
+}
+
+.div {
+    width: 70%;
+    height: 1000px;
+    color: red;
+    background-color: aquamarine;
+    /*margin属性进行水平对齐*/
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+
+    margin: 100px auto; /*这么写 前面指的上下 后面指的左右*/
+
+    /*position 属性进行左右对齐*/
+    /*position: absolute;*/
+    /*right: 0px; !*这个是向右对齐*!*/
+
+    /*float属性进行对齐*/
+    /*float: left;*/
+}
+

@@ -1,0 +1,50 @@
+
+/********数值导航栏********/
+/*ul{*/
+    /*list-style-type: none;*/
+    /*margin: 0px;*/
+    /*padding: 0px;*/
+/*}*/
+
+/*a:link, a:visited{*/
+    /*text-decoration: none;*/
+    /*display: block;*/
+    /*background-color: burlywood;*/
+    /*color: aliceblue;*/
+    /*width: 50px;*/
+    /*text-align: center;*/
+/*}*/
+/*a:active,a:hover{*/
+    /*background-color: red;*/
+/*}*/
+
+
+/*水平导航栏 注意这里面的dispay 是注销的*/
+ul{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    background-color: burlywood;
+    width: 250px;
+    text-align: center;
+}
+
+a:link, a:visited{
+    font-weight: 900;
+    text-decoration: none;
+    /*display: block;*/
+    background-color: burlywood;
+    color: aliceblue;
+    width: 50px;
+    text-align: center;
+}
+a:active,a:hover{
+    background-color: red;
+}
+
+li{
+    display: inline;
+    padding: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+}

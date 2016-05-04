@@ -1,0 +1,37 @@
+/*p{*/
+    /*width: 300px;*/
+    /*height: 300px;*/
+    /*margin: 100px auto;*/
+    /*text-align: center;*/
+    /*background-color: antiquewhite;*/
+
+    /*line-height: normal;*/
+/*}*/
+
+
+/*设置行间距*/
+/*.p1{*/
+    /*!*最大宽度*!*/
+    /*max-width: 200px;*/
+    /*!*min-width: 150px;*!*/
+    /*line-height: 200%;*/
+/*}*/
+
+/*.p2{*/
+    /*line-height: 50%;*/
+/*}*/
+
+/*设置鼠标指针效果*/
+/*p{*/
+    /*!*cursor: auto; !*这就是可复制的一个效果*!*!*/
+    /*cursor: alias;*/
+/*}*/
+
+
+li {
+    /*一行显示*/
+    display: inline;
+
+    /*设置文件是不是可见*/
+    visibility: hidden;
+}

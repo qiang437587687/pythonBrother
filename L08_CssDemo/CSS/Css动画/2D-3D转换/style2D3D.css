@@ -1,0 +1,46 @@
+div{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}
+/*移动*/
+/*.div2{*/
+    /*transform: translate(200px, 100px);*/
+    /*-webkit-transform: translate(200px, 100px); !*safair chrome*!*/
+    /*-ms-transform: translate(200px, 100px); !*IE*!*/
+    /*-o-transform: translate(200px, 100px); !*opera*!*/
+    /*-moz-transform: translate(200px, 100px);*/
+/*}*/
+
+
+/*旋转*/
+/*.div2{*/
+    /*transform: rotate(180deg);*/
+    /*-webkit-transform: rotate(200deg);*/
+    /*-ms-transform: rotate(180deg);*/
+    /*-o-transform: rotate(180deg);*/
+    /*-moz-transform: rotate(180deg);*/
+/*}*/
+
+/*缩放*/
+
+/*.div2{*/
+    /*transform: scale(1, 2);*/
+    /*margin-top: 100px;*/
+    /*-webkit-transform: scale(1, 2);*/
+
+/*}*/
+
+
+/*倾斜效果*/
+/*.div2{*/
+    /*transform: skew(50deg, 50deg);*/
+    /*-webkit-transform: skew(20deg, 20deg);*/
+
+/*}*/
+
+/*3D的一些转换效果 并没有弄明白*/
+.div2{
+    transform: rotateX(120deg);
+    -webkit-transform: rotateX(120deg);
+}

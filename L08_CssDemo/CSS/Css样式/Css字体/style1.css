@@ -1,0 +1,12 @@
+
+/*大小 字体 风格*/
+p{
+    font-size: 100px;
+    font-family: fantasy;
+
+}
+
+/*自定义字体的时候需要这个来把字体放到服务器上*/
+/*@font-face {*/
+    /*font-family: myfont;*/
+/*}*/
