@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event</title>
+    <link rel="stylesheet" href="EventStyle.css" type="text/css">
+</head>
+<body>
+<!--button 事件-->
+    <!--<button onclick="demo()">按钮</button>-->
+    <!--<script>-->
+        <!--function demo() {-->
+            <!--alert('Hello')-->
+        <!--}-->
+    <!--</script>-->
+
+
+<!--鼠标经过和移除-->
+    <!--<div class="div" onmouseout="onOut(this)" onmouseover="onOver(this)"></div>-->
+
+    <!--<script>-->
+        <!--function onOver(ooj){-->
+            <!--ooj.innerHTML = "hello";-->
+        <!--}-->
+        <!--function onOut(ooj) {-->
+            <!--ooj.innerHTML = "world";-->
+        <!--}-->
+    <!--</script>-->
+
+<!--改变事件的使用方式-->
+<!--<form action="">-->
+    <!--<input type="text" onchange="changeDemo(this)">-->
+<!--</form>-->
+
+<!--<script>-->
+    <!--function changeDemo(bg) {-->
+        <!--alert(-->
+                <!--"hello hanxiujuan"-->
+        <!--)-->
+    <!--}-->
+<!--</script>-->
+
+
+<!--和上面功能是一样的-->
+<form action="">
+    <input type="text" onchange="alert('zhang')">
+    <input type="text" onselect="changeDemo(this)">
+</form>
+<script>
+    function changeDemo(bg) {
+        bg.style.background = "red";
+    }
+</script>
+
+
+
+</body>
+</html>

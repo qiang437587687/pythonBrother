@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<img src="" alt="">-->
+<a id="aid" hrdef="http://www.baidu.com">hello</a>
+    <p id="pid">Hello</p>
+    <button onclick="Demo()">点击按钮</button>
+    <script>
+        function Demo(){
+           var nv = document.getElementById("pid");
+            nv.innerHTML = "world"
+
+            document.getElementsByTagName("p") //找到html中的第一个元素
+
+            var av = document.getElementById("aid")
+            av.href = "http://www.handabao.com"
+        }
+    </script>
+</body>
+</html>

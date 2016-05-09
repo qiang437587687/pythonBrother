@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="div">
+        <button id="btn1" onclick="Demo()">按钮</button>
+
+    </div>
+
+    <!--最开始的事件添加方式-->
+    <!--<script>-->
+        <!--function Demo() {-->
+            <!--alert("hello 事件处理")-->
+        <!--}-->
+    <!--</script>-->
+
+
+    <!--获取id后 添加事件-->
+    <!--<script>-->
+        <!--var btn1 = document.getElementById("btn1")-->
+
+        <!--btn1.onclick = function (){ //后面会覆盖前面这个事件-->
+            <!--alert("hello DOM 1级")-->
+        <!--}-->
+
+        <!--btn1.onclick = function (){-->
+            <!--alert("hello DOM 2级")-->
+        <!--}-->
+
+        <!--btn1.onclick = function (){-->
+            <!--alert("hello DOM 3级")-->
+        <!--}-->
+
+<!--//        btn1.onclick = null; //清除-->
+    <!--</script>-->
+
+
+    <!--addEventListener-->
+
+    <script>
+        var btn1 = document.getElementById("btn1");
+
+        btn1.addEventListener("click", function () {
+            alert("DOM2 级处理程序")
+        })
+
+        function demo2 () {
+            alert("DOM3 处理事件啊")
+        }
+
+        btn1.addEventListener("click",demo2)
+
+        btn1.removeEventListener("click",demo2)
+
+    </script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

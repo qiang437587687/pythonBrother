@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--一开始上来就加载的内容-->
+<body onload="startTime()">
+<script>
+
+//    var date =  new Date();
+//    document.write(date)
+
+//    时钟
+    function startTime() {
+
+        var today = new Date()
+        var h = today.getHours()
+        var m = today.getMinutes()
+        var s = today.getSeconds()
+        m = checkTime(m)
+        s = checkTime(s)
+
+        document.getElementById("timetxt").innerHTML = h + ":" + m +":" + s
+        t = setTimeout(function (){
+            startTime();
+        }, 500)
+    }
+
+    function checkTime(i) {
+        if (i<10) {
+            i = "0" + i
+        }
+        return i;
+    }
+
+</script>
+    <div id="timetxt">
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="div">
+        <button id="btn1">按钮</button>
+        <a href="http://www.handabao.com" id="aid">韩大宝</a>
+    </div>
+
+    <script>
+        document.getElementById("btn1").addEventListener("click", showType);
+//        document.getElementById("btn1").addEventListener("mouseover", showType);
+        document.getElementById("div").addEventListener("click", showdiv);
+
+        document.getElementById("aid").addEventListener("click",showA);
+
+
+        function showType(event){
+            alert(event.type) //获取类型
+            alert(event.target)// 获取html中的元素
+            event.stopPropagation() //阻止冒泡.
+        }
+
+        function showdiv() { //事件的冒泡.点击button 会执行div 的方法
+            alert("div")
+        }
+
+        function showA() {
+
+            event.stopPropagation()
+            event.preventDefault() //阻止默认事件的执行.
+
+        }
+    </script>
+
+</body>
+</html>

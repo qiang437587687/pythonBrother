@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p name="pn">Hello</p>
+<p name="pn">Hello</p>
+<p name="pn">Hello</p>
+<p name="pn">Hello</p>
+
+<a href="" id="aid" title="a标签属性">dabao</a>
+<a href="" id="aid2" title="a22222标签属性">dabao</a>
+
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+
+
+<div id="div">
+    <p id="pid">div de pppp</p>
+</div>
+
+<script>
+    function getName() {
+        var count = document.getElementsByName("pn")
+//        alert(count)
+        var p = count[2]
+        p.innerHTML = 'zhang'
+
+    }
+//    getName()
+
+    function getAttr() {
+        var anode = document.getElementById("aid")
+        var attr = anode.getAttribute('title')
+        alert(attr)
+    }
+//    getAttr()
+
+//    设置a的属性.
+    function setAttr() {
+        var anode = document.getElementById("aid2")
+        anode.setAttribute("title","喊道")
+        var attr = anode.getAttribute('title')
+        alert(attr)
+    }
+//    setAttr()
+
+//    获取子节点
+    function getChildNode() {
+        var childNode = document.getElementsByTagName("ul")[0].childNodes;
+        alert(childNode.length) //这个地方会显示7 因为中间有空格
+        alert(childNode[0].nodeType)
+    }
+
+//    getChildNode()
+
+//    获取父节点
+    function getParentNode() {
+        var div = document.getElementById("pid")
+        alert(div.parentNode.nodeName)
+    }
+//    getParentNode()
+
+//创建一个节点 和 添加
+    function creatNode() {
+        var body = document.body
+        var input = document.createElement("input")
+        input.type = "button";
+        input.value = "zhang"
+        body.appendChild(input)
+    }
+//    creatNode()
+
+    function addNode() {
+        var div = document.getElementById("div")
+        var node = document.getElementById("pid")
+        var newNode = document.createElement("p")
+        newNode.innerHTML = "动态添加一个p"
+        div.insertBefore(newNode, node)
+    }
+
+//    addNode()
+
+//    删除节点
+    function removeNode(){
+        var div = document.getElementById("div")
+        var p = div.removeChild(div.childNodes[1])
+    }
+//    removeNode()
+
+//    获得屏幕宽度
+    function getsize() {
+        var width = document.documentElement.offsetWidth || document.body.offsetWidth
+        alert(width)
+    }
+    getsize()
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

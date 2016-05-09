@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--<p id = 'pid'>e=hello</p>-->
+    <!--<button onclick="demo()"></button>-->
+    <!--<script>-->
+        <!--function change(){-->
+            <!--document.getElementById("pid").innerHTML = "world"-->
+
+        <!--}-->
+    <!--</script>-->
+
+
+    <!--<button id="btn">button</button>-->
+    <!--<script>-->
+        <!--//添加句柄-->
+        <!--document.getElementById("btn").addEventListener("click", function(){-->
+            <!--alert("hello")-->
+        <!--})-->
+    <!--</script>-->
+
+
+    <!--同时添加两个句柄和移除-->
+    <button id="btn">按钮</button>
+    <script>
+        var x = document.getElementById("btn");
+        x.addEventListener("click", Hello);
+        x.addEventListener("click", World);
+
+        x.removeEventListener("click", Hello);
+        function Hello(){
+            alert("hello")
+        }
+        function World(){
+            alert("World")
+        }
+    </script>
+
+
+</body>
+</html>

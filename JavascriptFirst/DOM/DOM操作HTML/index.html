@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>hello</p>
+<p>hello</p>
+<p>hello</p>
+<p>hello</p>
+<p>hello</p>
+<p>hello</p>
+<p>hello</p>
+
+<!--这种方式是有问题的 不要在HTML加载完之后再去调用 doucumentwrite方法!!!-->
+
+<button onclick="demo()">按钮</button>
+<script>
+//    document.write('hello')
+    function demo() {
+       document.write("zhang")
+    }
+</script>
+</body>
+</html>
