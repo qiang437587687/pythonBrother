@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p id="pTime">将要显示</p>
+
+<button id="buttonId" onclick="stopTime()">清除</button>
+
+<button onclick="myWin()">3秒执行</button>
+
+<button onclick="stopWin()">清除3秒</button>
+
+<script>
+
+    <!--设置一个过一段时间就调用的函数函数-->
+//    var myTime = setInterval(function () {
+//        getTime()
+//    }, 1000);
+//
+//    function getTime() {
+//        var d = new Date()
+//        var t = d.toLocaleTimeString()
+//        document.getElementById("pTime").innerHTML = t;
+//    }
+//
+//    function stopTime() {
+//        alert(1)
+//        clearInterval(myTime)
+//    }
+
+//    设置一段时间执行一次  如果有需要可以自己调用自己
+    var win;
+    function myWin() {
+        win = setTimeout(function() {
+            alert('hello')
+        },3000)
+    }
+
+    function stopWin() {
+        clearTimeout(win)
+    }
+</script>
+</body>
+</html>

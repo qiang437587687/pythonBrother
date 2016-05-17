@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button id="btn" onclick="getLoc()">按钮</button>
+    <p id="pid">开始</p>
+    <script>
+        function getLoc() {
+            //得到主机
+            //document.getElementById('pid').innerHTML= window.location.hostname;
+            //得到地址
+            //document.getElementById('pid').innerHTML= window.location.pathname;
+            //端口
+            //document.getElementById('pid').innerHTML= window.location.port;
+            //当前页面的url
+            //document.getElementById('pid').innerHTML= window.location.href;
+
+            //重新定向这个界面.
+            location.assign('http://www.handabao.com')
+        }
+    </script>
+</body>
+</html>

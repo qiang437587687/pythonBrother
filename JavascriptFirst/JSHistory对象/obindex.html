@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="">
+    <input type="text" id="username">
+    <button id="btn" onclick="safe()">按钮</button>
+</form>
+<script>
+    function safe() {
+
+        var name = document.getElementById("username").value;
+
+        if (name=="hello") {
+//            alert('进入go -1') //这个是不能直接放这里吧?? 不能跳转了
+            history.go(-1)
+
+        } else {
+
+            alert('输入错误')
+        }
+    }
+</script>
+</body>
+</html>
