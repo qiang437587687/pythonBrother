@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--引用的时候要添加 ../ 不添加没提示 fuck~ -->
+    <script src="../JSFile&jQuery/jquery-2.2.3.min.js"></script>
+    <script src="indexAnimation.js"></script>
+    <link rel="stylesheet" href="styleAnimation.css" type="text/css">
+</head>
+<body>
+
+    <!--隐藏和显示-->
+
+    <!--<p>hello</p>-->
+    <!--<button id="hide" onclick="">hide</button>-->
+    <!--<button id="show" onclick="">show</button>-->
+    <!--<button id="toggle">隐藏/显示</button>-->
+
+    <!--渐入渐出动画-->
+    <script>
+        for (var i = 0; i < 5; i++) {
+//   卧槽~  这样用js来添加一个元素啊~ 别忘记 < > 加上才行.要不加不上去 !
+            $("<div>").appendTo(document.body);
+        }
+
+        $("div").click(function() {
+           $(this).hide(2000, function(){
+               $(this).remove()
+           });
+        });
+
+    </script>
+
+</body>
+</html>
