@@ -1,0 +1,55 @@
+
+/*去掉前面的小点*/
+ul,li {
+    list-style: none;
+}
+
+/*去掉缩进*/
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+
+.main,.hmain{
+    background-image: url(image/IMG_1277.png);
+    background-repeat: repeat-x;
+    width: 100px;
+}
+
+li {
+    background-color: #eeeeee;
+}
+
+a {
+    text-decoration: none;
+    padding-left: 20px;
+    display: block;
+    width: 80px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.main a,.hmain a {
+    color: white;
+    background-image: url(image/IMG_1299.png);
+    background-repeat: no-repeat;
+    background-position: 3px center;
+}
+
+
+.main li a,.hmain li a {
+    color: black;
+    background-image: none;
+}
+
+
+.main ul, .hmain ul {
+    display: none;
+}
+
+
+.hmain {
+    float: left;
+    margin-right: 1px;
+}
