@@ -1,3 +1,7 @@
+
+# -t -n 两个选项的是简化后的?? .不好用 试验总是有问题
+
+
 """Example of program which uses [options] shortcut in pattern.
 
 Usage:
@@ -10,6 +14,10 @@ Options:
   -t, --timeout TIMEOUT    set timeout TIMEOUT seconds
   --apply                  apply changes to database
   -q                       operate in quiet mode
+
+arguments:
+    N               A number
+    TIMEOUT         timeout interval
 
 """
 from docopt import docopt

@@ -1,1 +1,1 @@
-{'han': 2, 'xiu': 3, 'zhang': 1}
+station = {'han': 2, 'xiu': 3, 'zhang': 1}
