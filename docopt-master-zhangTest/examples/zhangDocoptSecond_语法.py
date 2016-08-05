@@ -10,7 +10,7 @@
 Usage:
     docoptSecond.py [-gdtkz] <from> <to> <date>
     docoptSecond.py zhang [-dmm] <nimei>
-    docoptSecond.py zhangB (-d|-mm) <nimei> [<nimei2>]
+    docoptSecond.py zhangB (-d|-mm) <nimei> [<nimei2>]...
     docoptSecond.py (zhangD|zhangC) (-g|-mm) <nimei> [<nimei2>]
     docoptSecond.py zhangE -n <N>
 
