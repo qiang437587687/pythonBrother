@@ -1,3 +1,7 @@
+
+# http://blog.csdn.net/rebelqsp/article/details/22109925
+# 这个连接里面很详细的介绍了相关的python socket函数等.
+
 import socket
 import time
 HOST = "localhost"

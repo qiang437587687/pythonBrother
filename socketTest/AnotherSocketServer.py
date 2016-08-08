@@ -6,8 +6,8 @@ PORT = 8023
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind((HOST, PORT))
 s.listen(5)
-
 conn, address = s.accept()
+
 while True:
     data = conn.recv(1024)
 
@@ -17,7 +17,6 @@ while True:
         conn.sendall("done".encode())
     else:
         conn.sendall("no done".encode())
-
 
 # while True:
 #     conn, addr = s.accept()
