@@ -2,9 +2,8 @@
  * Created by zhang on 16/5/13.
  */
 
-
 $(document).ready(function() {
-    //alert("加载完成了会显示执行这个函数")
+    alert("加载完成了会显示执行这个函数");
 
     //$("p").click(function() {
     //    $(this).hide();
